@@ -295,5 +295,13 @@ def hello():
 def test():
     return {"status": "success", "message": "API endpoint working"}
 
+@app.route("/")
+def home():
+    return "Dark Web Report Sender - Basic Test Working!"
+
+@app.route("/about")
+def about():
+    return "About page working"
+
 # This is the entry point for Vercel
 # Vercel will automatically call the 'app' variable 
