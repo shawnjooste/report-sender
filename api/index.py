@@ -270,10 +270,15 @@ def config_status():
     """
     return config_html
 
-# Vercel serverless function entry point
-def handler(request):
-    with app.app_context():
-        return app.full_dispatch_request()
+# Export the Flask app for Vercel
+from werkzeug.wrappers import Response
+
+# This is the entry point that Vercel will call
+def handler(event, context):
+    return app(event, lambda *args: Response(*args))
+
+# Alternative entry point (Vercel will use this)
+app_handler = app
 
 if __name__ == '__main__':
     app.run(debug=True) 
