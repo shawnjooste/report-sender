@@ -270,15 +270,5 @@ def config_status():
     """
     return config_html
 
-# Export the Flask app for Vercel
-from werkzeug.wrappers import Response
-
-# This is the entry point that Vercel will call
-def handler(event, context):
-    return app(event, lambda *args: Response(*args))
-
-# Alternative entry point (Vercel will use this)
-app_handler = app
-
-if __name__ == '__main__':
-    app.run(debug=True) 
+# This is the entry point for Vercel
+# Vercel will automatically call the 'app' variable 
