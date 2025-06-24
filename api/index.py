@@ -272,24 +272,7 @@ def config_status():
 
 @app.route('/')
 def hello():
-    return """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Dark Web Report Sender - Test</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body class="bg-light">
-        <div class="container mt-5">
-            <h1>🎉 Vercel Flask Test Successful!</h1>
-            <p class="lead">The basic setup is working. We can now add back the full functionality.</p>
-            <div class="alert alert-success">
-                <strong>✅ Flask is running on Vercel!</strong>
-            </div>
-        </div>
-    </body>
-    </html>
-    """
+    return 'Hello World from Vercel!'
 
 @app.route('/test')
 def test():
@@ -305,3 +288,6 @@ def about():
 
 # This is the entry point for Vercel
 # Vercel will automatically call the 'app' variable 
+
+if __name__ == '__main__':
+    app.run() 
